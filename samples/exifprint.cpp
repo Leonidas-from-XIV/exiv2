@@ -29,6 +29,9 @@
 
 int _tmain(int argc, _tchar* const argv[])
 try {
+    Exiv2::XmpParser::initialize();
+    ::atexit(Exiv2::XmpParser::terminate);
+
     const _tchar* prog = argv[0];
     const _tchar* file = argv[1];
 
@@ -93,11 +96,18 @@ try {
                   << "\n";
     }
 
+#ifdef EXV_HAVE_XMP_TOOLKIT
+    Exiv2::XmpParser::terminate();
+#endif
+
     return 0;
 }
 //catch (std::exception& e) {
 //catch (Exiv2::AnyError& e) {
 catch (Exiv2::Error& e) {
     std::cout << "Caught Exiv2 exception '" << e.what() << "'\n";
+#ifdef EXV_HAVE_XMP_TOOLKIT
+    Exiv2::XmpParser::terminate();
+#endif
     return -1;
 }
