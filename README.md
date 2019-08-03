@@ -577,7 +577,7 @@ Therefore, multi-threaded applications need to ensure that these two XMP functio
 
 As discussed in the section on Thread Safety, Exiv2 classes for Exif and IPTC metadata are fully reentrant and require no initialisation or cleanup.
 
-Adobe's XMPsdk is generally thread-safe, however it has to be initialized and terminated before and after starting any threads to access XMP metadata.    The Exiv2 library will initialize this if necessary, however it does not terminate XMPsdk.
+Adobe's XMPsdk is generally thread-safe, however it has to be initialized and terminated before and after starting any threads to access XMP metadata. The Exiv2 library will initialize this if necessary, however it does not terminate the XMPsdk.
 
 The Exiv2 command-line and the sample applications call the following at the outset:
 
@@ -930,4 +930,4 @@ Work in progress:  [https://github.com/Exiv2/exiv2/issues/902](https://github.co
 
 Robin Mills
 
-Revised: 2019-07-29
+Revised: 2019-08-03
