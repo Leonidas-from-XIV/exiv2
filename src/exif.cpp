@@ -662,6 +662,7 @@ namespace Exiv2 {
             "Exif.Image.JPEGInterchangeFormatLength",
             "Exif.Image.SubIFDs",
             // Issue 981.  Never allow manufactured data to be written
+            "Exif.Canon.AFInfoSize",
             "Exif.Canon.AFAreaMode",
             "Exif.Canon.AFNumPoints",
             "Exif.Canon.AFValidPoints",
